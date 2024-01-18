@@ -1,5 +1,6 @@
 import { Icons } from '@/components/Icons'
 import { WebConfig } from '@/types'
+
 export const webConfig: WebConfig = {
   mainNav: [
     {
