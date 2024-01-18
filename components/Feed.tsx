@@ -1,9 +1,7 @@
+'use client'
+
 import React from 'react'
-import { Avatar } from './Avatar'
-import { InputOption } from './InputOption'
-import { Icons } from './Icons'
 import { CreatePost } from './CreatePost'
-import { Post } from './Post'
 
 export const Feed = () => {
   return (
@@ -26,8 +24,8 @@ export const Feed = () => {
       </button>
 
       {/* POST SECTION */}
-      <div>
-        <Post />
+      <div className="h-full text-center text-lg text-gray-600 items-center">
+        <p>There is no posts yet.</p>
       </div>
     </div>
   )

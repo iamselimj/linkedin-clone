@@ -4,7 +4,7 @@ import { Avatar } from './Avatar'
 
 export const Post = () => {
   return (
-    <div className="w-full border-2 rounded-lg px-3 py-2">
+    <div className="w-full border-2 rounded-lg px-3 py-2 shadow-md">
       <div className="flex">
         <Avatar imageUrl="/avatar.jpg" width={54} height={54} />
         <div className="flex flex-col">
@@ -14,8 +14,8 @@ export const Post = () => {
           </div>
           <div>Description</div>
           <div className="flex gap-2">
-            <span>Timestamp</span>
-            <span>Icon</span>
+            <span>Lifetime "date now minus timestamp"</span>
+            <span>Icon "public" or "private"</span>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@ export const Post = () => {
       </div>
       <div>
         <p>Post Image</p>
-        <Image src="" alt="" width={150} height={150} />
+        <Image src="/avatar.jpg" alt="" width={150} height={150} />
       </div>
       <div>Likes</div>
       <div className="border-t">Post Options</div>

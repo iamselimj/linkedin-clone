@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import { MainNavItem } from '@/types'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utilities'
 import { usePathname } from 'next/navigation'
 import { Avatar } from './Avatar'
 

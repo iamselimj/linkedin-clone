@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { TailwindIndicator } from '@/components/TailwindIndicator'
+import Provider from '@/components/Provider'
+import { cn } from '@/lib/utilities'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        {children}
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={cn('min-h-screen', inter.className)}>
+        <Provider>{children}</Provider>
         <TailwindIndicator />
       </body>
     </html>
