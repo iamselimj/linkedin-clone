@@ -26,7 +26,7 @@ export const Widgets = () => {
 
   const UsersList = () => {
     return users.map((user, idx) => (
-      <div className="py-2">
+      <div key={idx} className="py-2">
         <div className="flex gap-1">
           <Avatar imageUrl={user.imageUrl} width={46} height={46} />
           <div className="flex flex-col">
