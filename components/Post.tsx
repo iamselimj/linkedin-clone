@@ -14,8 +14,8 @@ export const Post = () => {
           </div>
           <div>Description</div>
           <div className="flex gap-2">
-            <span>Lifetime "date now minus timestamp"</span>
-            <span>Icon "public" or "private"</span>
+            <span>Lifetime - date now minus timestamp</span>
+            <span>Icon - public or private</span>
           </div>
         </div>
       </div>
