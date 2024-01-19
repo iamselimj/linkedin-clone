@@ -18,7 +18,7 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className="sticky w-1/5 flex flex-col">
+    <div className="sticky w-full md:w-2/5 lg:w-1/5 flex flex-col">
       <div className="flex flex-col border-2 rounded-lg shadow-md">
         {/* HEADER */}
         <Link
@@ -30,8 +30,8 @@ export const Sidebar = () => {
               'https://images.unsplash.com/photo-1614849286521-4c58b2f0ff15?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             }
             alt=""
-            width={350}
-            height={350}
+            width={732}
+            height={732}
             loading="lazy"
             className="rounded-t-lg h-[60px] -mb-[33px]"
           />
@@ -50,7 +50,7 @@ export const Sidebar = () => {
         </Link>
 
         {/* STATS */}
-        <div className="flex flex-col border-t py-3 gap-2 font-medium text-gray-500 hover:border-gray-300">
+        <div className="hidden md:flex flex-col border-t py-3 gap-2 font-medium text-gray-500 hover:border-gray-300">
           <Link
             href={'/'}
             className="flex justify-between py-0.5 px-2 text-xs rounded-lg hover:bg-gray-200/70"
@@ -71,7 +71,7 @@ export const Sidebar = () => {
         </div>
 
         {/* PREMIUM */}
-        <div className="group border-t py-3 px-1 gap-2 font-medium text-gray-500 hover:border-gray-300">
+        <div className="hidden md:flex group border-t py-3 px-1 gap-2 font-medium text-gray-500 hover:border-gray-300">
           <Link href={''} className="flex flex-col text-xs gap-1.5 text-black ">
             <span className="flex mt-1 text-xs font-light text-gray-500 group-hover:text-gray-600">
               Access exclusive tools & insights
@@ -82,7 +82,8 @@ export const Sidebar = () => {
             </div>
           </Link>
         </div>
-        <div className="flex flex-col border-t py-3 px-1 font-medium text-gray-500 hover:border-gray-300">
+
+        <div className="hidden md:flex flex-col border-t py-3 px-1 font-medium text-gray-500 hover:border-gray-300">
           <Link href="" className="flex items-center text-xs text-black gap-1">
             <Icons.bookmark className="text-gray-500" fontSize="medium" />
             <span>My items</span>
@@ -91,7 +92,7 @@ export const Sidebar = () => {
       </div>
 
       {/* RECENT TOPICS */}
-      <div className="mt-2 flex flex-col border-2 rounded-lg shadow-md">
+      <div className="hidden mt-2 md:flex flex-col border-2 rounded-lg shadow-md">
         <span className="p-2 w-full text-sm font-medium border-b">
           Recent topics
         </span>

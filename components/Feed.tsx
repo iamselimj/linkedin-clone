@@ -2,10 +2,14 @@
 
 import React from 'react'
 import { CreatePost } from './CreatePost'
+import { trpc } from '@/client/client'
+import { Post } from './Post'
 
 export const Feed = () => {
+  const posts = trpc.getPosts.useQuery()
+
   return (
-    <div className="w-3/5 px-5">
+    <div className="w-full lg:w-3/5 md:pl-5 lg:pr-5 mt-3 md:mt-0">
       {/* ADD POST SECTION */}
       <CreatePost />
 
@@ -24,9 +28,9 @@ export const Feed = () => {
       </button>
 
       {/* POST SECTION */}
-      <div className="h-full text-center text-lg text-gray-600 items-center">
-        <p>There is no posts yet.</p>
-      </div>
+      {posts.data?.map((post) => {
+        return <Post key={post.id} id={post.id} />
+      })}
     </div>
   )
 }

@@ -6,7 +6,7 @@ export const webConfig: WebConfig = {
     {
       Icon: Icons.home,
       heading: 'Home',
-      href: '/'
+      href: '/feed'
     },
     {
       Icon: Icons.users,

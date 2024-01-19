@@ -2,9 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import { Avatar } from './Avatar'
 
-export const Post = () => {
+interface PostProps {
+  id: string
+}
+
+export const Post = ({ id }: PostProps) => {
   return (
-    <div className="w-full border-2 rounded-lg px-3 py-2 shadow-md">
+    <div className="bg-blue-500 w-full border-2 rounded-lg px-3 py-2 shadow-md">
       <div className="flex">
         <Avatar imageUrl="/avatar.jpg" width={54} height={54} />
         <div className="flex flex-col">
@@ -20,7 +24,7 @@ export const Post = () => {
         </div>
       </div>
       <div>
-        <p>Post Body</p>
+        <p>{id}</p>
       </div>
       <div>
         <p>Post Image</p>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { TailwindIndicator } from '@/components/TailwindIndicator'
-import Provider from '@/components/Provider'
 import { cn } from '@/lib/utilities'
+import Provider from '@/components/Provider'
 
 const inter = Inter({ subsets: ['latin'] })
 

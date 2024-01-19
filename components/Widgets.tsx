@@ -47,7 +47,7 @@ export const Widgets = () => {
   }
 
   return (
-    <div className="sticky w-1/4 flex flex-col">
+    <div className="sticky w-1/4 flex-col hidden lg:flex">
       <div className="flex flex-col border-2 rounded-lg shadow-md">
         <div className="p-2 flex justify-between items-center w-full text-sm font-medium border-b">
           <span>Add to your feed</span>
