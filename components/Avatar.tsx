@@ -11,15 +11,13 @@ interface AvatarProps {
 
 export const Avatar = ({ imageUrl, width, height, className }: AvatarProps) => {
   return (
-    <div className={cn('', className)}>
-      <Image
-        src={imageUrl}
-        alt="Profile picture"
-        width={width}
-        height={height}
-        loading="lazy"
-        className="rounded-full border-2 border-white"
-      />
-    </div>
+    <Image
+      src={imageUrl}
+      alt="Profile picture"
+      width={width}
+      height={height}
+      loading="lazy"
+      className={cn('rounded-full', className)}
+    />
   )
 }

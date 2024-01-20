@@ -9,7 +9,7 @@ export const Sidebar = () => {
     return (
       <Link
         href=""
-        className="p-1.5 rounded-lg flex items-center text-xs font-semibold text-blue-600 hover:underline hover:bg-gray-200/70"
+        className="p-1.5 rounded-lg flex items-center text-xs font-semibold text-linkedin hover:underline hover:bg-gray-200/70"
       >
         <span className="">#</span>
         <span>{topic}</span>
@@ -37,9 +37,9 @@ export const Sidebar = () => {
           />
           <Avatar
             imageUrl="/avatar.jpg"
-            width={66}
-            height={66}
-            className="flex justify-center"
+            width={68}
+            height={68}
+            className="mx-auto border-2 border-white"
           />
           <h2 className="mt-3 text-lg font-medium group-over:underline group-hover:underline">
             Sélim Jacquet
@@ -56,7 +56,7 @@ export const Sidebar = () => {
             className="flex justify-between py-0.5 px-2 text-xs rounded-lg hover:bg-gray-200/70"
           >
             Profile viewers
-            <span className="text-blue-600">14</span>
+            <span className="text-linkedin">14</span>
           </Link>
           <Link
             href={'/'}
@@ -64,7 +64,7 @@ export const Sidebar = () => {
           >
             <div className="flex justify-between">
               Connections
-              <span className="text-blue-600">32</span>
+              <span className="text-linkedin">32</span>
             </div>
             <span className="text-gray-900">Connect with Alumni</span>
           </Link>
@@ -76,7 +76,7 @@ export const Sidebar = () => {
             <span className="flex mt-1 text-xs font-light text-gray-500 group-hover:text-gray-600">
               Access exclusive tools & insights
             </span>
-            <div className="flex items-center gap-1 group-hover:text-blue-600 hover:underline">
+            <div className="flex items-center gap-1 group-hover:text-linkedin hover:underline">
               <Icons.premium className="text-amber-600" fontSize="medium" />
               <span>Get hired faster with Premium</span>
             </div>

@@ -1,37 +1,44 @@
 import React from 'react'
 import Image from 'next/image'
 import { Avatar } from './Avatar'
+import { Icons } from './Icons'
 
 interface PostProps {
-  id: string
+  author: string | null
+  description: string | null
+  imageUrl: string | null
 }
 
-export const Post = ({ id }: PostProps) => {
+export const Post = ({ author, description, imageUrl }: PostProps) => {
   return (
-    <div className="bg-blue-500 w-full border-2 rounded-lg px-3 py-2 shadow-md">
+    <div className="w-full border-2 rounded-lg p-3 shadow-md mb-">
+      {/* USER INFO */}
       <div className="flex">
         <Avatar imageUrl="/avatar.jpg" width={54} height={54} />
         <div className="flex flex-col">
           <div className="flex gap-2">
-            <span>Username</span>
+            <span>{author}</span>
             <span>Title</span>
           </div>
-          <div>Description</div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <span>Lifetime - date now minus timestamp</span>
-            <span>Icon - public or private</span>
+            <Icons.world fontSize="small" className="text-gray-400" />
           </div>
         </div>
       </div>
-      <div>
-        <p>{id}</p>
-      </div>
-      <div>
-        <p>Post Image</p>
-        <Image src="/avatar.jpg" alt="" width={150} height={150} />
-      </div>
-      <div>Likes</div>
-      <div className="border-t">Post Options</div>
+
+      {/* POST INFO */}
+      {description ?? (
+        <div className="">
+          <p>{description}</p>
+        </div>
+      )}
+
+      {imageUrl && (
+        <div>
+          <Image src={imageUrl} alt="" width={150} height={150} />
+        </div>
+      )}
     </div>
   )
 }

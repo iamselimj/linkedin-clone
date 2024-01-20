@@ -13,6 +13,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import NewspaperIcon from '@mui/icons-material/Newspaper'
 import AddIcon from '@mui/icons-material/Add'
 import InfoIcon from '@mui/icons-material/Info'
+import LanguageIcon from '@mui/icons-material/Language'
 
 export const Icons = {
   apps: AppsIcon,
@@ -29,5 +30,6 @@ export const Icons = {
   jobs: BusinessCenterIcon,
   message: MessageIcon,
   notifications: NotificationsIcon,
-  premium: WorkspacePremiumIcon
+  premium: WorkspacePremiumIcon,
+  world: LanguageIcon
 }

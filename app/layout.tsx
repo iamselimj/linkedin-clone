@@ -4,6 +4,7 @@ import '@/styles/globals.css'
 import { TailwindIndicator } from '@/components/TailwindIndicator'
 import { cn } from '@/lib/utilities'
 import Provider from '@/components/Provider'
+import { SessionProvider } from '@/components/SessionProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={cn('min-h-screen', inter.className)}>
-        <Provider>{children}</Provider>
+        <SessionProvider>
+          <Provider>{children}</Provider>
+        </SessionProvider>
         <TailwindIndicator />
       </body>
     </html>

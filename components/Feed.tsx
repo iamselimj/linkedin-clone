@@ -1,17 +1,17 @@
 'use client'
 
 import React from 'react'
-import { CreatePost } from './CreatePost'
-import { trpc } from '@/client/client'
+import { PostForm } from './PostForm'
+import { trpc } from '@/lib/trpc.client'
 import { Post } from './Post'
 
 export const Feed = () => {
   const posts = trpc.getPosts.useQuery()
 
   return (
-    <div className="w-full lg:w-3/5 md:pl-5 lg:pr-5 mt-3 md:mt-0">
+    <div className="w-full h-full lg:w-3/5 md:pl-5 lg:pr-5 mt-3 md:mt-0">
       {/* ADD POST SECTION */}
-      <CreatePost />
+      <PostForm />
 
       {/* DIVIDER SECTION */}
       <button className="w-full flex items-center text-xs py-3">
@@ -27,10 +27,18 @@ export const Feed = () => {
         </div>
       </button>
 
-      {/* POST SECTION */}
-      {posts.data?.map((post) => {
-        return <Post key={post.id} id={post.id} />
-      })}
+      <div className="w-full h-full ">
+        {posts.data?.map((post) => {
+          return (
+            <Post
+              key={post.id}
+              author={post.userName}
+              description={post.description}
+              imageUrl={post.image}
+            />
+          )
+        })}
+      </div>
     </div>
   )
 }

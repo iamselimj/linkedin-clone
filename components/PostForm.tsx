@@ -3,11 +3,11 @@ import { Avatar } from './Avatar'
 import { Icons } from './Icons'
 import { InputOption } from './InputOption'
 
-export const CreatePost = () => {
+export const PostForm = () => {
   return (
     <div className="flex flex-col border-2 rounded-lg shadow-md">
       <div className="flex justify-center gap-2 px-3 py-2 ">
-        <Avatar imageUrl="/avatar.jpg" width={54} height={54} />
+        <Avatar imageUrl="/avatar.jpg" width={40} height={40} />
         <input
           className="border-2 rounded-full w-full pl-3"
           placeholder="Start a post"

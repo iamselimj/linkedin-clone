@@ -1,9 +1,9 @@
 import { db } from '@/lib/prisma.client'
-import { publicProcedure, router } from './trpc'
+import { publicProcedure, router } from './trpc.server'
 
 export const appRouter = router({
   getPosts: publicProcedure.query(async () => {
-    return db.post.findMany()
+    return await db.post.findMany()
   })
 })
 

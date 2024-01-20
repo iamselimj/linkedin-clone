@@ -14,7 +14,11 @@ const config: Config = {
         '2xl': '1200px'
       }
     },
-    extend: {}
+    extend: {
+      colors: {
+        linkedin: '#0966C2'
+      }
+    }
   },
   plugins: []
 }

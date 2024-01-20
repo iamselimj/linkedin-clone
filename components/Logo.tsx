@@ -5,7 +5,7 @@ import React from 'react'
 export const Logo = () => {
   return (
     <Link href={'/'}>
-      <Image src={'/LinkedInLogo.svg'} alt="" width={35} height={35} />
+      <Image src={'/LinkedInIcon.svg'} alt="" width={35} height={35} />
     </Link>
   )
 }
