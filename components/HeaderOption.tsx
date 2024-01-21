@@ -7,8 +7,6 @@ import { MainNavItem } from '@/types'
 import { cn } from '@/lib/utilities'
 import { usePathname } from 'next/navigation'
 
-import { useSession } from 'next-auth/react'
-
 export const HeaderOption = ({ Icon, heading, href }: MainNavItem) => {
   const path = usePathname()
   return (
