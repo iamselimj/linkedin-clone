@@ -4,7 +4,7 @@ import { SearchBar } from './SearchBar'
 import { MainNav } from './MainNav'
 import { webConfig } from '@/config/web'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 export const Header = () => {
   const session = useSession()
@@ -16,17 +16,34 @@ export const Header = () => {
           <SearchBar />
         </div>
 
-        <div className="flex items-center">
-          <MainNav items={webConfig.mainNav} />
-          <Link
-            href="/"
-            className="hidden lg:inline-flex text-xs font-light text-center text-amber-700 underline hover:text-amber-900"
-          >
-            Get hired faster. <br />
-            Try Premium <br />
-            free.
-          </Link>
-        </div>
+        {session.status == 'authenticated' ? (
+          <div className="flex items-center">
+            <MainNav items={webConfig.mainNav} />
+            <Link
+              href="/"
+              className="hidden lg:inline-flex text-xs font-light text-center text-amber-700 underline hover:text-amber-900"
+            >
+              Get hired faster. <br />
+              Try Premium <br />
+              free.
+            </Link>
+          </div>
+        ) : (
+          <div className="flex items-center gap-4">
+            <Link
+              href={'/login'}
+              className="border border-black px-3 py-1.5 rounded-lg"
+            >
+              Login
+            </Link>
+            <Link
+              href={'/register'}
+              className="bg-linkedin text-white px-3 py-1.5 rounded-lg"
+            >
+              Register
+            </Link>
+          </div>
+        )}
       </div>
     </header>
   )

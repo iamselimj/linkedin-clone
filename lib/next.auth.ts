@@ -8,7 +8,9 @@ export const NextAuthOptions: AuthOptions = {
     strategy: 'jwt'
   },
   pages: {
-    signIn: '/login'
+    signIn: '/login',
+    signOut: '/login',
+    newUser: '/feed'
   },
   adapter: PrismaAdapter(db),
   providers: [
@@ -21,19 +23,16 @@ export const NextAuthOptions: AuthOptions = {
       },
 
       async authorize(credentials, req) {
-        const res = await fetch(
-          'https://linkedin-clone-iamselimj.vercel.app/api/auth/login',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              username: credentials?.username,
-              password: credentials?.password
-            })
-          }
-        )
+        const res = await fetch('http://localhost:3000/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: credentials?.username,
+            password: credentials?.password
+          })
+        })
 
         const user = await res.json()
 
