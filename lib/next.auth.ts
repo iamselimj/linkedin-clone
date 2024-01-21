@@ -2,6 +2,7 @@ import { type AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { db } from './prisma.client'
+import { env } from '@/env.mjs'
 
 export const NextAuthOptions: AuthOptions = {
   session: {
@@ -23,7 +24,7 @@ export const NextAuthOptions: AuthOptions = {
       },
 
       async authorize(credentials, req) {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/login`, {
+        const res = await fetch(`${env.NEXT_PUBLIC_APP_URL}/api/auth/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -33,7 +33,7 @@ export const Sidebar = () => {
             width={732}
             height={732}
             loading="lazy"
-            className="rounded-t-lg h-[60px] -mb-[33px]"
+            className="rounded-t-md h-[60px] -mb-[33px]"
           />
           <Avatar
             imageUrl="/avatar.jpg"
