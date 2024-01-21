@@ -6,8 +6,9 @@ import React from 'react'
 import { MainNavItem } from '@/types'
 import { cn } from '@/lib/utilities'
 import { usePathname } from 'next/navigation'
+
+import { useSession } from 'next-auth/react'
 import { Avatar } from './Avatar'
-import { signOut } from 'next-auth/react'
 
 export const HeaderOption = ({ Icon, heading, href }: MainNavItem) => {
   const path = usePathname()
@@ -19,18 +20,7 @@ export const HeaderOption = ({ Icon, heading, href }: MainNavItem) => {
       )}
     >
       <Link href={href} className="flex flex-col items-center">
-        {Icon ? (
-          <Icon />
-        ) : (
-          <button className="" onClick={() => signOut()}>
-            <Avatar
-              imageUrl="/avatar.jpg"
-              width={28}
-              height={28}
-              className=""
-            />
-          </button>
-        )}
+        {Icon && <Icon />}
         <span className="text-xs hidden lg:flex">{heading}</span>
       </Link>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Avatar } from './Avatar'
+
 import { Icons } from './Icons'
 
 interface PostProps {
@@ -14,7 +14,6 @@ export const Post = ({ author, description, imageUrl }: PostProps) => {
     <div className="w-full border-2 rounded-lg p-3 shadow-md mb-">
       {/* USER INFO */}
       <div className="flex">
-        <Avatar imageUrl="/avatar.jpg" width={54} height={54} />
         <div className="flex flex-col">
           <div className="flex gap-2">
             <span>{author}</span>

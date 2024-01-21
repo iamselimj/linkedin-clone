@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { Avatar } from './Avatar'
+
 import { Icons } from './Icons'
 
 export const Widgets = () => {
@@ -28,7 +28,6 @@ export const Widgets = () => {
     return users.map((user, idx) => (
       <div key={idx} className="py-2">
         <div className="flex gap-1">
-          <Avatar imageUrl={user.imageUrl} width={46} height={46} />
           <div className="flex flex-col">
             <h3 className="font-medium">{user.userName}</h3>
             <div className="flex text-xs text-gray-500">

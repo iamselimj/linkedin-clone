@@ -9,7 +9,7 @@ import { z } from 'zod'
 type FormData = z.infer<typeof LoginFormSchema>
 
 export const LoginForm = () => {
-  const { register, handleSubmit } = useForm<z.infer<typeof LoginFormSchema>>({
+  const { register, handleSubmit } = useForm<FormData>({
     resolver: zodResolver(LoginFormSchema),
     defaultValues: {
       username: '',
@@ -18,13 +18,11 @@ export const LoginForm = () => {
   })
 
   async function onSubmit(data: FormData) {
-    const signInResult = await signIn('credentials', {
+    const loginResult = await signIn('credentials', {
       username: data.username.toLowerCase(),
       password: data.password,
       callbackUrl: 'http://localhost:3000/feed'
     })
-
-    console.log(signInResult)
   }
 
   return (

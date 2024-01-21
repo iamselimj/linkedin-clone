@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { Avatar } from './Avatar'
 import Link from 'next/link'
 import { Icons } from './Icons'
 
@@ -34,12 +33,6 @@ export const Sidebar = () => {
             height={732}
             loading="lazy"
             className="rounded-t-md h-[60px] -mb-[33px]"
-          />
-          <Avatar
-            imageUrl="/avatar.jpg"
-            width={68}
-            height={68}
-            className="mx-auto border-2 border-white"
           />
           <h2 className="mt-3 text-lg font-medium group-over:underline group-hover:underline">
             Sélim Jacquet
