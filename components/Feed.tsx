@@ -32,7 +32,7 @@ export const Feed = () => {
           return (
             <Post
               key={post.id}
-              author={post.userName}
+              author={post.username}
               description={post.description}
               imageUrl={post.image}
             />
