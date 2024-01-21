@@ -28,13 +28,11 @@ export const RegisterForm = () => {
       body: JSON.stringify(data)
     })
 
-    if (registerResult.ok) {
-      signIn('credentials', {
-        username: data.username.toLowerCase(),
-        password: data.password,
-        callbackUrl: 'http://localhost:3000/feed'
-      })
-    }
+    await signIn('credentials', {
+      username: data.username.toLowerCase(),
+      password: data.password,
+      callbackUrl: 'http://localhost:3000/feed'
+    })
   }
 
   return (

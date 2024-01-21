@@ -4,7 +4,7 @@ import { SearchBar } from './SearchBar'
 import { MainNav } from './MainNav'
 import { webConfig } from '@/config/web'
 import Link from 'next/link'
-import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 
 export const Header = () => {
   const session = useSession()

@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
   const user = await db.user.findFirst({
     where: {
-      userName: body.username
+      username: body.username
     }
   })
 

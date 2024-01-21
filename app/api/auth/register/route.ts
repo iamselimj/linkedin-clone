@@ -1,8 +1,10 @@
 import { db } from '@/lib/prisma.client'
 import * as bcrypt from 'bcrypt'
+import { signIn } from 'next-auth/react'
 
 interface RequestBody {
   email: string
+  profilePicture?: string
   username: string
   password: string
 }
@@ -13,7 +15,8 @@ export async function POST(request: Request) {
   const user = await db.user.create({
     data: {
       email: body.email,
-      userName: body.username,
+      avatar: body.profilePicture,
+      username: body.username,
       password: await bcrypt.hash(body.password, 10)
     }
   })
