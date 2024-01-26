@@ -27,8 +27,8 @@ export const HeaderOption = ({ Icon, heading, href }: MainNavItem) => {
             <Avatar
               imageUrl={session.data?.user.image!}
               alt={'User profile picture'}
-              width={24}
-              height={24}
+              width={26}
+              height={1}
               className="rounded-full"
             />
           </button>

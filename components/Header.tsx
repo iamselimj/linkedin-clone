@@ -13,7 +13,7 @@ export const Header = () => {
       <div className="container mx-auto h-16 flex justify-between items-center">
         <div className="flex items-center gap-6">
           <Logo />
-          <SearchBar />
+          {session.status === 'authenticated' && <SearchBar />}
         </div>
 
         {session.status === 'authenticated' ? (

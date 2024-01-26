@@ -1,12 +1,21 @@
-import React from 'react'
-
+'use client'
+import { useSession } from 'next-auth/react'
+import { Avatar } from './Avatar'
 import { Icons } from './Icons'
 import { InputOption } from './InputOption'
 
 export const PostForm = () => {
+  const session = useSession()
   return (
     <div className="flex flex-col border-2 rounded-lg shadow-md">
-      <div className="flex justify-center gap-2 px-3 py-2 ">
+      <div className="flex justify-between gap-2 px-3 py-2 ">
+        <Avatar
+          imageUrl={session.data?.user.image!}
+          alt={''}
+          width={45}
+          height={1}
+          className="rounded-full"
+        />
         <input
           className="border-2 rounded-full w-full pl-3"
           placeholder="Start a post"

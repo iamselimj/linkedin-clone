@@ -60,14 +60,14 @@ export const Sidebar = () => {
         {/* STATS */}
         <div className="hidden md:flex flex-col border-t py-3 gap-2 font-medium text-gray-500 hover:border-gray-300">
           <Link
-            href={'/'}
+            href={''}
             className="flex justify-between py-0.5 px-2 text-xs rounded-lg hover:bg-gray-200/70"
           >
             Profile viewers
             <span className="text-linkedin">14</span>
           </Link>
           <Link
-            href={'/'}
+            href={''}
             className="flex flex-col py-0.5 px-2 text-xs rounded-lg hover:bg-gray-200/70"
           >
             <div className="flex justify-between">

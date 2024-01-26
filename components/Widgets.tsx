@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import React from 'react'
 
+import { Avatar } from './Avatar'
 import { Icons } from './Icons'
 
 export const Widgets = () => {
@@ -27,7 +27,14 @@ export const Widgets = () => {
   const UsersList = () => {
     return users.map((user, idx) => (
       <div key={idx} className="py-2">
-        <div className="flex gap-1">
+        <div className="flex gap-3">
+          <Avatar
+            imageUrl={user.imageUrl}
+            alt={''}
+            width={40}
+            height={0}
+            className="rounded-full"
+          />
           <div className="flex flex-col">
             <h3 className="font-medium">{user.userName}</h3>
             <div className="flex text-xs text-gray-500">
@@ -36,7 +43,7 @@ export const Widgets = () => {
           </div>
         </div>
         <div className="w-full flex ml-12">
-          <button className="border flex items-center border-gray-500 px-3 py-1 rounded-full font-medium text-gray-600 text-sm">
+          <button className="mt-1 border flex items-center border-gray-500 px-2 py-1 rounded-full font-medium text-gray-600 text-sm">
             <Icons.plus fontSize={'small'} />
             Follow
           </button>

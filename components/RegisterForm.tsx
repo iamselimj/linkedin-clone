@@ -53,7 +53,7 @@ export const RegisterForm = () => {
 
       <div className="flex flex-col gap-">
         <label id="profilePicture" className="">
-          Profile Picture URL
+          Profile Picture
         </label>
         <input
           id="profilePicture"
