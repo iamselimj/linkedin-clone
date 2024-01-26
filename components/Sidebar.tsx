@@ -1,9 +1,14 @@
+'use client'
+
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
-import React from 'react'
 import Link from 'next/link'
+import { Avatar } from './Avatar'
 import { Icons } from './Icons'
 
 export const Sidebar = () => {
+  const session = useSession()
+
   const recetItem = (topic: string) => {
     return (
       <Link
@@ -32,13 +37,23 @@ export const Sidebar = () => {
             width={732}
             height={732}
             loading="lazy"
-            className="rounded-t-md h-[60px] -mb-[33px]"
+            className="rounded-t-md h-[60px] -mb-7"
           />
+          <div className="flex justify-center items-center">
+            <Avatar
+              imageUrl={session.data?.user.image!}
+              alt={'profile picture'}
+              width={58}
+              height={58}
+              className="rounded-full border-2 border-white"
+            />
+          </div>
+
           <h2 className="mt-3 text-lg font-medium group-over:underline group-hover:underline">
-            Sélim Jacquet
+            {session.data?.user.name}
           </h2>
           <h3 className="mt-1 text-xs font-light text-gray-500">
-            Junior Full Stack Web Developer
+            {session.data?.user.email}
           </h3>
         </Link>
 

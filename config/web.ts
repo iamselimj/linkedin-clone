@@ -29,8 +29,9 @@ export const webConfig: WebConfig = {
       href: '/notifications'
     },
     {
-      heading: 'Me ▼',
-      href: '/me'
+      Avatar: '',
+      heading: 'Sign out',
+      href: ''
     },
     {
       Icon: Icons.apps,

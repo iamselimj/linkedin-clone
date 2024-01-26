@@ -1,8 +1,9 @@
+import { env } from '@/env.mjs'
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import { User } from '@prisma/client'
 import { type AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { db } from './prisma.client'
-import { env } from '@/env.mjs'
 
 export const NextAuthOptions: AuthOptions = {
   session: {
@@ -35,7 +36,7 @@ export const NextAuthOptions: AuthOptions = {
           })
         })
 
-        const user = await res.json()
+        const user: User = await res.json()
 
         if (!user) {
           return null
@@ -45,5 +46,37 @@ export const NextAuthOptions: AuthOptions = {
       }
     })
   ],
-  callbacks: {}
+  callbacks: {
+    async session({ session, token }) {
+      if (token) {
+        session.user.id = token.id
+        session.user.email = token.email
+        session.user.name = token.name
+        session.user.image = token.picture
+      }
+      return session
+    },
+
+    async jwt({ token, user }) {
+      const dbUser = await db.user.findFirst({
+        where: {
+          email: token.email!
+        }
+      })
+
+      if (!dbUser) {
+        if (user) {
+          token.id = user?.id
+        }
+        return token
+      }
+
+      return {
+        id: dbUser.id,
+        name: dbUser.username,
+        email: dbUser.email,
+        picture: dbUser.avatar
+      }
+    }
+  }
 }

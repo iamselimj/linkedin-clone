@@ -1,10 +1,10 @@
 'use client'
-import { Logo } from './Logo'
-import { SearchBar } from './SearchBar'
-import { MainNav } from './MainNav'
 import { webConfig } from '@/config/web'
-import Link from 'next/link'
 import { useSession } from 'next-auth/react'
+import Link from 'next/link'
+import { Logo } from './Logo'
+import { MainNav } from './MainNav'
+import { SearchBar } from './SearchBar'
 
 export const Header = () => {
   const session = useSession()
@@ -16,7 +16,7 @@ export const Header = () => {
           <SearchBar />
         </div>
 
-        {session.status == 'authenticated' ? (
+        {session ? (
           <div className="flex items-center">
             <MainNav items={webConfig.mainNav} />
             <Link

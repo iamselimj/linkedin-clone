@@ -3,6 +3,7 @@ import { type Url } from 'next/dist/shared/lib/router/router'
 
 export type MainNavItem = {
   Icon?: SvgIconComponent
+  Avatar?: string
   heading: string
   href: Url
 }

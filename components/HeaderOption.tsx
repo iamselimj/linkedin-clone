@@ -1,14 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import React from 'react'
 
-import { MainNavItem } from '@/types'
 import { cn } from '@/lib/utilities'
+import { MainNavItem } from '@/types'
+import { signOut, useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
+import { Avatar } from './Avatar'
 
 export const HeaderOption = ({ Icon, heading, href }: MainNavItem) => {
   const path = usePathname()
+  const session = useSession()
+
   return (
     <div
       className={cn(
@@ -17,7 +20,20 @@ export const HeaderOption = ({ Icon, heading, href }: MainNavItem) => {
       )}
     >
       <Link href={href} className="flex flex-col items-center">
-        {Icon && <Icon />}
+        {Icon ? (
+          <Icon />
+        ) : (
+          <button onClick={() => signOut()}>
+            <Avatar
+              imageUrl={session.data?.user.image!}
+              alt={'User profile picture'}
+              width={24}
+              height={24}
+              className="rounded-full"
+            />
+          </button>
+        )}
+
         <span className="text-xs hidden lg:flex">{heading}</span>
       </Link>
     </div>
