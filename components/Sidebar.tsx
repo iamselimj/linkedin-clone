@@ -43,8 +43,8 @@ export const Sidebar = () => {
             <Avatar
               imageUrl={session.data?.user.image!}
               alt={'profile picture'}
-              width={58}
-              height={58}
+              width={70}
+              height={70}
               className="rounded-full border-2 border-white"
             />
           </div>
