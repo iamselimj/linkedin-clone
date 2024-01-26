@@ -30,7 +30,7 @@ export const webConfig: WebConfig = {
     },
     {
       Avatar: '',
-      heading: 'Sign out',
+      heading: 'Sign Out',
       href: ''
     },
     {
