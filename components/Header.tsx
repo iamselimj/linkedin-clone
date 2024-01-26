@@ -16,7 +16,7 @@ export const Header = () => {
           <SearchBar />
         </div>
 
-        {session ? (
+        {session.status === 'authenticated' ? (
           <div className="flex items-center">
             <MainNav items={webConfig.mainNav} />
             <Link
